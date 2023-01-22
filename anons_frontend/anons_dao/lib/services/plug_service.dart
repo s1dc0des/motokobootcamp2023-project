@@ -2,6 +2,7 @@
 library jquery;
 
 import 'package:agent_dart/principal/principal.dart';
+import 'package:anons_dao/did/anons_ic_backend.idl.dart';
 import 'package:anons_dao/helpers/chain_utils.dart';
 // import 'package:/helper/chain_utils.dart';
 import 'package:http/http.dart' as http;
@@ -17,8 +18,11 @@ external String _getPrincipal();
 @JS("approve")
 external String _approve(int amount);
 
-@JS("play")
-external String _play(List<int> assetIds);
+@JS("vote")
+external String _vote(int id, bool pass, String message);
+
+@JS("submitProposal")
+external String _submitProposal(String message);
 
 @JS("balance")
 external String _balance();
@@ -55,8 +59,12 @@ class PlugService {
     return await promiseToFuture(_approve(amount));
   }
 
-  Future play(List<int> numbers) async {
-    return await promiseToFuture(_play(numbers));
+  Future vote(int id, bool pass, String message) async {
+    return await promiseToFuture(_vote(id, pass, message));
+  }
+
+  Future submitProposal(String message) async {
+    return await promiseToFuture(_submitProposal(message));
   }
 
   Future<dynamic> balance() async {

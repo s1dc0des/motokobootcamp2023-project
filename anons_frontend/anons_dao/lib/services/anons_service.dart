@@ -10,7 +10,7 @@ class AnonsService {
 
   Future<AnonsController> setup() async {
     String url = "https://ic0.app";
-    _controller = await AgentFactory.create(
+    _controller = AgentFactory.create(
       canisterId: canister,
       url: url,
       idl: AnonsIcBackend.idl,

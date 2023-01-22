@@ -10,7 +10,7 @@ final authProvider = ChangeNotifierProvider<AuthProvider>((ref) {
 class AuthProvider with ChangeNotifier {
   final _plugService = PlugService();
   bool loggedIn = false;
-  Principal myPrincipal = Principal.anonymous();
+  Principal? myPrincipal = null;
 
   login<bool>() async {
     bool connected = await _plugService.isConnected() as bool;
@@ -19,7 +19,7 @@ class AuthProvider with ChangeNotifier {
       myPrincipal = _plugService.getPrincipal();
     } else {
       loggedIn = false;
-      myPrincipal = Principal.anonymous();
+      myPrincipal = null;
     }
     notifyListeners();
     return connected;

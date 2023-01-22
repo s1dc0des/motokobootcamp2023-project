@@ -22,11 +22,11 @@ class AnonsTheme {
     scaffoldBackgroundColor: secondaryDark,
     textTheme: TextTheme(
       bodyText1: GoogleFonts.vt323(
-        fontSize: 18,
+        fontSize: 12,
         color: textColor,
       ),
       bodyText2: GoogleFonts.vt323(
-        fontSize: 24,
+        fontSize: 18,
         color: textColor,
       ),
       headline1: GoogleFonts.vt323(
