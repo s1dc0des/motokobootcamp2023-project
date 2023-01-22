@@ -25,9 +25,18 @@ class AnonDaoProvider with ChangeNotifier {
     final prs = await _anonService.getAllProposalsS();
     for (var p in prs) {
       proposals.add(p.item2);
+      getVotesOnProposal(p.item1.toInt());
     }
     setBusy(false);
   }
 
-  getVotesOnProposal(int id) async {}
+  getVotesOnProposal(int id) async {
+    final c = await _anonService.getVotesOnProposalS(id);
+    if (c != null) {
+      if (c.isNotEmpty) {
+        votes[id] = c;
+        notifyListeners();
+      }
+    }
+  }
 }

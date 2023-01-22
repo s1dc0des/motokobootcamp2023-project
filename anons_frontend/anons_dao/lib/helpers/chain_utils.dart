@@ -49,6 +49,10 @@ class ChainUtils {
   static divideByEight<double>({required int amount}) {
     return amount / 100000000;
   }
+
+  static DateTime getDateFromNano(int nanosec) {
+    return DateTime.fromMicrosecondsSinceEpoch((nanosec ~/ 1000));
+  }
 }
 
 extension StringCasingExtension on String {

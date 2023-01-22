@@ -22,4 +22,16 @@ class AnonsService {
   Future<List<Tuple2<BigInt, Proposal>>> getAllProposalsS() {
     return getAllProposals(_controller.actor);
   }
+
+  Future<Proposal?> getProposalS(int id) {
+    return getProposal(_controller.actor, BigInt.from(id));
+  }
+
+  Future<List<Vote>?> getVotesOnProposalS(int id) {
+    return getVotesOnProposal(_controller.actor, BigInt.from(id));
+  }
+
+  Future<BigInt> lastExecutionAtS() {
+    return lastExecutionAt(_controller.actor);
+  }
 }

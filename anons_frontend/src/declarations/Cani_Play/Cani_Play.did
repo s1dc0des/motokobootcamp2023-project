@@ -1,0 +1,23 @@
+type Track = 
+ record {
+   dislikes: int;
+   id: text;
+   likes: int;
+   pid: text;
+ };
+type Result_1 = 
+ variant {
+   err: text;
+   ok: vec Track;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok: text;
+ };
+service : {
+  addToPlaylist: (text, text) -> (Result);
+  getPlaylist: (text) -> (Result_1) query;
+  putDislike: (text, text) -> (Result);
+  putLike: (text, text) -> (Result);
+}
