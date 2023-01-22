@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "anons_ic_frontend": {
+      "frontend": {
+        "entrypoint": "src/anons_ic_frontend/main.dart.js"
+      },
+      "source": [
+        "dist/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "dfx": "0.12.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8001",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

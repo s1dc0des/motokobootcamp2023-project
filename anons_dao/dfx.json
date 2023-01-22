@@ -1,0 +1,15 @@
+{
+  "canisters": {
+    "anons_ic_backend": {
+      "main": "src/anons_ic_backend/main.mo",
+      "type": "motoko"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}
